@@ -11,13 +11,15 @@ st.write(
     "Instead of manual input, select a transaction to simulate real-time fraud prediction."
 )
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # ---------- Load artifacts ----------
 @st.cache_resource
 def load_artifacts():
-    BASE_DIR = os.path.dirname(__file__)	
+    	
     model = joblib.load(os.path.join(BASE_DIR, "fraud_model.pkl"))
-    scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
-    feature_names = joblib.load(os.path.join(BASE_DIR, "feature_names.pkl"))
+    scaler = joblib.load(os.path.join(BASE_DIR, "fraud_scaler.pkl"))
+    feature_names = joblib.load(os.path.join(BASE_DIR, "fraud_feature_names.pkl"))
     return model, scaler, feature_names
 
 model, scaler, feature_names = load_artifacts()
