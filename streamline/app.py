@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
 st.set_page_config(page_title="Fraud Detection Demo", layout="centered")
 st.title("💳 Credit Card Fraud Detection (Demo)")
@@ -13,9 +14,10 @@ st.write(
 # ---------- Load artifacts ----------
 @st.cache_resource
 def load_artifacts():
-    model = joblib.load("fraud_model.pkl")
-    scaler = joblib.load("fraud_scaler.pkl")
-    feature_names = joblib.load("fraud_feature_names.pkl")
+    BASE_DIR = os.path.dirname(__file__)	
+    model = joblib.load(os.path.join(BASE_DIR, "fraud_model.pkl"))
+    scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl"))
+    feature_names = joblib.load(os.path.join(BASE_DIR, "feature_names.pkl"))
     return model, scaler, feature_names
 
 model, scaler, feature_names = load_artifacts()
