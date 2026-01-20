@@ -64,8 +64,3 @@ if st.button("Check Fraud Risk"):
         st.warning("⚠️ Medium Risk Transaction")
     else:
         st.success("✅ Low Risk Transaction")
-
-    # Actual label (if exists)
-    if "Class" in row.index:
-        actual = "Fraud" if int(row["Class"]) == 1 else "Normal"
-        st.caption(f"Actual label in dataset: **{actual}**")
