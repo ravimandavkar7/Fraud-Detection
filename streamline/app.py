@@ -31,6 +31,11 @@ model, scaler, feature_names = load_artifacts()
 #    return df
 #
 #df = load_data()*/
+df = pd.DataFrame([
+    {"V1": -1.2, "V2": 0.3, "V3": 1.5, "Amount": 50},
+    {"V1": 0.1, "V2": -0.8, "V3": -1.1, "Amount": 200},
+    {"V1": -2.3, "V2": 1.9, "V3": 0.4, "Amount": 120}
+])
 
 # ---------- UI ----------
 st.subheader("Select a transaction")
