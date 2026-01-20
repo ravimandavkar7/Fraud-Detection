@@ -25,12 +25,12 @@ def load_artifacts():
 model, scaler, feature_names = load_artifacts()
 
 # ---------- Load data ----------
-/*@st.cache_data
-def load_data():
-    df = pd.read_csv("creditcard.csv")
-    return df
-
-df = load_data()*/
+#@st.cache_data
+#def load_data():
+#    df = pd.read_csv("creditcard.csv")
+#    return df
+#
+#df = load_data()*/
 
 # ---------- UI ----------
 st.subheader("Select a transaction")
