@@ -40,7 +40,7 @@ df = pd.DataFrame([
 # ---------- UI ----------
 st.subheader("Select a transaction")
 max_idx = len(df) - 1
-idx = st.slider("Transaction index", 0, max_idx, 10)
+idx = st.slider("Transaction index", 0, max_idx, 0)
 
 row = df.iloc[idx]
 
