@@ -49,11 +49,11 @@ input_data = pd.DataFrame([{
 input_data = input_data.reindex(columns=feature_names, fill_value=0)
 
 # Scale
-# X_scaled = scaler.transform(input_data)
+ X_scaled = scaler.transform(input_data)
 
 # ---------- Predict ----------
 if st.button("Check Fraud Risk"):
-    prob = model.predict_proba(input_data)[0][1]
+    prob = model.predict_proba(X_scaled)[0][1]
 
     st.write(f"## Fraud Probability: **{prob:.2f}**")
 
