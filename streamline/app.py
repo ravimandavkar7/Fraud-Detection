@@ -49,7 +49,7 @@ input_data = pd.DataFrame([{
 input_data = input_data.reindex(columns=feature_names, fill_value=0)
 
 # Scale
- X_scaled = scaler.transform(input_data)
+X_scaled = scaler.transform(input_data)
 
 # ---------- Predict ----------
 if st.button("Check Fraud Risk"):
